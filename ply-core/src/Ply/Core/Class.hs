@@ -13,7 +13,8 @@ import Data.Text (Text)
 import GHC.TypeLits (ErrorMessage (ShowType, Text))
 import Ply.Core.Types (AsData (AsData))
 
-import PlutusCore (DefaultUni, Includes, Some, ValueOf)
+import PlutusCore (Some, ValueOf)
+import PlutusCore.Default (DefaultUni, Includes)
 import qualified PlutusCore as PLC
 import qualified PlutusTx.AssocMap as PlutusMap
 
@@ -153,7 +154,8 @@ instance PlyArg Value where
       ( \(cs, tkMap) ->
           ( toBuiltinArgData cs
           , toBuiltinArgData
-              . PlutusMap.safeFromList
+              -- OK to use unsafe since the list is normalized already
+              . PlutusMap.unsafeFromList
               $ map (bimap toBuiltinArg toBuiltinArg) tkMap
           )
       )
