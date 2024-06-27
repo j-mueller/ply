@@ -17,11 +17,11 @@ repository cardano-haskell-packages
 
 source-repository-package
   type: git
-  --sha256: sha256-aeaZMW5Y3r5GdSyrfrrKOuGahcL5MVkDUNggunbmtv0=
-  location: https://github.com/Plutonomicon/plutarch-plutus.git
-  tag: 288d9140468ae98abe1c9a4c0bb1c19a82eb7cd6
+  location: https://github.com/Plutonomicon/plutarch-plutus
+  tag: 1a5bd6135744073bd16903dee02eb724b2543a6c
   subdir:
     .
+    plutarch-ledger-api
     plutarch-extra
 
 with-compiler: ghc-9.6.4

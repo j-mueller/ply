@@ -25,6 +25,7 @@ common common-deps
     , plutarch
     , plutarch-extra
     , plutus-ledger-api
+    , plutarch-ledger-api
     , plutus-tx
     , ply-core
     , text
@@ -92,7 +93,6 @@ library
   exposed-modules:
     Ply.Plutarch
     Ply.Plutarch.Class
-    Ply.Plutarch.TypedWriter
 
   hs-source-dirs:  src
 
